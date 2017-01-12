@@ -1109,6 +1109,35 @@ INSERT INTO `bb_employee` VALUES ('08cc3dc8-9b81-4ebd-beb3-b4ae29157621','admin'
 UNLOCK TABLES;
 
 --
+-- Table structure for table `bb_employee_hier`
+--
+
+DROP TABLE IF EXISTS `bb_employee_hier`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bb_employee_hier` (
+  `OID` char(36) NOT NULL,
+  `EMP_OID` char(36) NOT NULL,
+  `SUP_OID` char(36) NOT NULL,
+  `CUSERID` varchar(24) NOT NULL,
+  `CDATE` datetime NOT NULL,
+  `UUSERID` varchar(24) DEFAULT NULL,
+  `UDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`OID`),
+  UNIQUE KEY `UK_1` (`EMP_OID`,`SUP_OID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bb_employee_hier`
+--
+
+LOCK TABLES `bb_employee_hier` WRITE;
+/*!40000 ALTER TABLE `bb_employee_hier` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bb_employee_hier` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `bb_employee_orga`
 --
 
@@ -5080,4 +5109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-11 22:45:05
+-- Dump completed on 2017-01-12 19:09:43
