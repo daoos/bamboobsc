@@ -1134,6 +1134,7 @@ CREATE TABLE `bb_employee_hier` (
 
 LOCK TABLES `bb_employee_hier` WRITE;
 /*!40000 ALTER TABLE `bb_employee_hier` DISABLE KEYS */;
+INSERT INTO `bb_employee_hier` VALUES ('1aed8351-dc2a-47b2-be62-80bb501c2c8b','7e3708b2-9363-44a2-bef7-cc1e328921b3','0000000000','system','2017-01-17 19:59:12',NULL,NULL),('33a54642-d3bf-4202-9f73-afdd67ef70fe','08cc3dc8-9b81-4ebd-beb3-b4ae29157621','0000000000','system','2017-01-17 19:59:12',NULL,NULL),('b9d5f57b-7a50-4abd-a2c4-2c99d34909f5','f38611e4-5938-4f95-9c3c-4c20af123c26','0000000000','system','2017-01-17 19:59:13',NULL,NULL),('d732ecca-626a-41b1-9498-d2c40c4e073d','e620ab39-c7b3-471d-af7c-4f0db44de93d','0000000000','system','2017-01-17 19:59:13',NULL,NULL);
 /*!40000 ALTER TABLE `bb_employee_hier` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2688,6 +2689,7 @@ CREATE TABLE `qrtz_fired_triggers` (
 
 LOCK TABLES `qrtz_fired_triggers` WRITE;
 /*!40000 ALTER TABLE `qrtz_fired_triggers` DISABLE KEYS */;
+INSERT INTO `qrtz_fired_triggers` VALUES ('scheduler','localX8614846542917701484654291723','core.job.SendMailHelperJobCronTrigger','DEFAULT','localX861484654291770',1484654390142,1484654400000,0,'ACQUIRED',NULL,NULL,'0','0');
 /*!40000 ALTER TABLE `qrtz_fired_triggers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2794,7 +2796,7 @@ CREATE TABLE `qrtz_scheduler_state` (
 
 LOCK TABLES `qrtz_scheduler_state` WRITE;
 /*!40000 ALTER TABLE `qrtz_scheduler_state` DISABLE KEYS */;
-INSERT INTO `qrtz_scheduler_state` VALUES ('scheduler','localX861484653686450',1484653876140,7500);
+INSERT INTO `qrtz_scheduler_state` VALUES ('scheduler','localX861484654291770',1484654391140,7500);
 /*!40000 ALTER TABLE `qrtz_scheduler_state` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -2909,7 +2911,7 @@ CREATE TABLE `qrtz_triggers` (
 
 LOCK TABLES `qrtz_triggers` WRITE;
 /*!40000 ALTER TABLE `qrtz_triggers` DISABLE KEYS */;
-INSERT INTO `qrtz_triggers` VALUES ('scheduler','core.job.ClearTempDataJobCronTrigger','DEFAULT','core.job.ClearTempDataJob','DEFAULT',NULL,1484681401000,-1,0,'WAITING','CRON',1484653686000,0,NULL,0,''),('scheduler','core.job.SendMailHelperJobCronTrigger','DEFAULT','core.job.SendMailHelperJob','DEFAULT',NULL,1484653920000,1484653800000,0,'WAITING','CRON',1484653686000,0,NULL,0,''),('scheduler','core.job.SysExpressionJobCronTrigger','DEFAULT','core.job.SysExpressionJob','DEFAULT',NULL,1484653920000,1484653860000,0,'WAITING','CRON',1484653686000,0,NULL,0,'');
+INSERT INTO `qrtz_triggers` VALUES ('scheduler','core.job.ClearTempDataJobCronTrigger','DEFAULT','core.job.ClearTempDataJob','DEFAULT',NULL,1484681401000,-1,0,'WAITING','CRON',1484654291000,0,NULL,0,''),('scheduler','core.job.SendMailHelperJobCronTrigger','DEFAULT','core.job.SendMailHelperJob','DEFAULT',NULL,1484654400000,-1,0,'ACQUIRED','CRON',1484654291000,0,NULL,0,''),('scheduler','core.job.SysExpressionJobCronTrigger','DEFAULT','core.job.SysExpressionJob','DEFAULT',NULL,1484654400000,1484654340000,0,'WAITING','CRON',1484654291000,0,NULL,0,'');
 /*!40000 ALTER TABLE `qrtz_triggers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3029,6 +3031,7 @@ CREATE TABLE `qrtz_z_bsc_fired_triggers` (
 
 LOCK TABLES `qrtz_z_bsc_fired_triggers` WRITE;
 /*!40000 ALTER TABLE `qrtz_z_bsc_fired_triggers` DISABLE KEYS */;
+INSERT INTO `qrtz_z_bsc_fired_triggers` VALUES ('scheduler','localX8614846543466511484654346601','bsc.job.SysExpressionJobCronTrigger','DEFAULT','localX861484654346651',1484654372362,1484654400000,0,'ACQUIRED',NULL,NULL,'0','0');
 /*!40000 ALTER TABLE `qrtz_z_bsc_fired_triggers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3135,7 +3138,7 @@ CREATE TABLE `qrtz_z_bsc_scheduler_state` (
 
 LOCK TABLES `qrtz_z_bsc_scheduler_state` WRITE;
 /*!40000 ALTER TABLE `qrtz_z_bsc_scheduler_state` DISABLE KEYS */;
-INSERT INTO `qrtz_z_bsc_scheduler_state` VALUES ('scheduler','localX861484653744667',1484653874053,7500);
+INSERT INTO `qrtz_z_bsc_scheduler_state` VALUES ('scheduler','localX861484654346651',1484654393442,7500);
 /*!40000 ALTER TABLE `qrtz_z_bsc_scheduler_state` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -3250,7 +3253,7 @@ CREATE TABLE `qrtz_z_bsc_triggers` (
 
 LOCK TABLES `qrtz_z_bsc_triggers` WRITE;
 /*!40000 ALTER TABLE `qrtz_z_bsc_triggers` DISABLE KEYS */;
-INSERT INTO `qrtz_z_bsc_triggers` VALUES ('scheduler','bsc.job.SysExpressionJobCronTrigger','DEFAULT','bsc.job.SysExpressionJob','DEFAULT',NULL,1484653920000,1484653860000,0,'WAITING','CRON',1484653744000,0,NULL,0,'');
+INSERT INTO `qrtz_z_bsc_triggers` VALUES ('scheduler','bsc.job.SysExpressionJobCronTrigger','DEFAULT','bsc.job.SysExpressionJob','DEFAULT',NULL,1484654400000,-1,0,'ACQUIRED','CRON',1484654346000,0,NULL,0,'');
 /*!40000 ALTER TABLE `qrtz_z_bsc_triggers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -5109,4 +5112,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-17 19:53:34
+-- Dump completed on 2017-01-17 20:01:29
