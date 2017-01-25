@@ -2121,6 +2121,101 @@ LOCK TABLES `bb_swot_report_mst` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `bb_tsa`
+--
+
+DROP TABLE IF EXISTS `bb_tsa`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bb_tsa` (
+  `OID` char(36) NOT NULL,
+  `NAME` varchar(100) NOT NULL,
+  `DESCRIPTION` varchar(500) DEFAULT NULL,
+  `INTEGRATION_ORDER` int(1) NOT NULL DEFAULT '1',
+  `FORECAST_NEXT` int(2) NOT NULL,
+  `CUSERID` varchar(24) NOT NULL,
+  `CDATE` datetime NOT NULL,
+  `UUSERID` varchar(24) DEFAULT NULL,
+  `UDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`OID`),
+  UNIQUE KEY `UK_1` (`NAME`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bb_tsa`
+--
+
+LOCK TABLES `bb_tsa` WRITE;
+/*!40000 ALTER TABLE `bb_tsa` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bb_tsa` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bb_tsa_ma_coefficients`
+--
+
+DROP TABLE IF EXISTS `bb_tsa_ma_coefficients`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bb_tsa_ma_coefficients` (
+  `OID` char(36) NOT NULL,
+  `TSA_OID` char(36) NOT NULL,
+  `SEQ` int(2) NOT NULL,
+  `SEQ_VALUE` float(3,2) NOT NULL DEFAULT '0.00',
+  `CUSERID` varchar(24) NOT NULL,
+  `CDATE` datetime NOT NULL,
+  `UUSERID` varchar(24) DEFAULT NULL,
+  `UDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`OID`),
+  UNIQUE KEY `UK_1` (`TSA_OID`,`SEQ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bb_tsa_ma_coefficients`
+--
+
+LOCK TABLES `bb_tsa_ma_coefficients` WRITE;
+/*!40000 ALTER TABLE `bb_tsa_ma_coefficients` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bb_tsa_ma_coefficients` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `bb_tsa_measure_freq`
+--
+
+DROP TABLE IF EXISTS `bb_tsa_measure_freq`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bb_tsa_measure_freq` (
+  `OID` char(36) NOT NULL,
+  `TSA_OID` char(36) NOT NULL,
+  `FREQ` varchar(1) NOT NULL,
+  `START_DATE` varchar(8) NOT NULL,
+  `END_DATE` varchar(8) NOT NULL,
+  `DATA_TYPE` varchar(1) NOT NULL,
+  `ORG_ID` varchar(10) NOT NULL,
+  `EMP_ID` varchar(10) NOT NULL,
+  `CUSERID` varchar(24) NOT NULL,
+  `CDATE` datetime NOT NULL,
+  `UUSERID` varchar(24) DEFAULT NULL,
+  `UDATE` datetime DEFAULT NULL,
+  PRIMARY KEY (`OID`),
+  UNIQUE KEY `UK_1` (`TSA_OID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bb_tsa_measure_freq`
+--
+
+LOCK TABLES `bb_tsa_measure_freq` WRITE;
+/*!40000 ALTER TABLE `bb_tsa_measure_freq` DISABLE KEYS */;
+/*!40000 ALTER TABLE `bb_tsa_measure_freq` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `bb_vision`
 --
 
@@ -5110,4 +5205,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-01-22 17:55:50
+-- Dump completed on 2017-01-25 18:54:30
